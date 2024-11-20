@@ -1,0 +1,126 @@
+COP3530 Data Structures Project Outline
+Due date: 11/20/2024
+
+Team:
+ ● Alejandro Garcia: Priority scheduling
+ ● Alberto Leyva: Task management
+ ● Carlos Salazar: Quick lookup (hashmap)
+Optional team effort: Visualization (graph structure)
+
+
+
+
+Intentionally left blank
+
+
+
+Project Title:
+Smart Task Builder with Scheduling and Dependency Management
+
+
+
+
+Objectives
+Implement a system to efficiently schedule tasks based on priority.
+Enable quick lookup of task details using a hashmap.
+Ensure dependency resolution between tasks using a directed graph.
+Combine the above functionalities into a seamless and efficient task management application.
+
+
+
+Features:
+1. Task Management:
+	•	Add, update, and delete tasks.
+	•	Assign priorities to tasks (e.g., low, medium, high).
+	•	Define dependencies (e.g., Task A must be completed before Task B).
+2. Priority Scheduling:
+	•	Use a priority queue to automatically order tasks for execution based on priority.
+3. Quick Lookup:
+	•	Use a hashmap to store task details for quick access using task IDs.
+4. Dependency Management:
+	•	Use a directed graph to represent task dependencies and determine the correct order of execution using topological sorting.
+5. Visualization (Optional):
+	•	Display task dependencies in a graph-like structure for better understanding.
+	•	Show the scheduling order based on priorities.
+
+
+
+
+Architecture and Workflow:
+	1.	Data Structures:
+	•	Priority Queue: For scheduling tasks based on their priority levels.
+	•	HashMap: For storing task details (e.g., ID, name, description, status, priority).
+	•	Graph (Adjacency List): For managing task dependencies.
+	2.	Workflow:
+	1.	Add a task:
+	•	Assign an ID, name, description, priority, and optional dependencies.
+	•	Store task details in the hashmap.
+	•	Add dependencies to the graph as directed edges.
+	2.	Update a task:
+	•	Modify details in the hashmap and adjust the graph if dependencies change.
+	3.	Delete a task:
+	•	Remove the task from the hashmap, priority queue, and graph.
+	4.	Schedule tasks:
+	•	Perform a topological sort on the graph to resolve dependencies.
+	•	Use the priority queue to order tasks within the sorted list by priority.
+	5.	Execute tasks:
+	•	Fetch tasks from the priority queue and execute them in the resolved order.
+
+
+
+Implementation Steps:
+
+Step 1: Define Classes
+	•	Task: Contains ID, name, description, priority, and dependencies.
+	•	TaskManager: Manages the task list, using the hashmap, priority queue, and graph.
+Step 2: Implement the Data Structures
+	1.	HashMap:
+	•	Key: Task ID
+	•	Value: Task details
+	2.	Priority Queue:
+	•	Stores tasks with a comparator based on priority.
+	3.	Graph:
+	•	Represented using an adjacency list to manage dependencies.
+Step 3: Develop Core Features
+	1.	Add and update tasks:
+	•	Insert into the hashmap and graph.
+	2.	Topological sort for dependency resolution:
+	•	Ensure no circular dependencies using cycle detection.
+	3.	Priority-based task ordering:
+	•	Use the priority queue to finalize the execution order.
+Step 4: Integration
+	•	Combine all components to support seamless scheduling, lookup, and dependency management.
+Step 5: Testing
+	•	Test with scenarios involving overlapping priorities, missing dependencies, and circular dependencies.
+
+Input:
+Task A: Priority High, No Dependencies
+Task B: Priority Medium, Depends on Task A
+Task C: Priority Low, Depends on Task B
+Process:
+	1.	HashMap stores:
+	•	Task A → Details
+	•	Task B → Details
+	•	Task C → Details
+	2.	Graph:
+	•	A → B → C
+	3.	Priority Queue:
+	•	High → Medium → Low (filtered by dependency resolution)
+
+
+Output:
+Execution Order: Task A → Task B → Task C
+
+Optional Extensions:
+	1.	Add a GUI to visualize dependencies and priorities.
+	2.	Save and load tasks using a database or file system.
+	3.	Support for recurring tasks and deadlines.
+
+Tools and Technologies:
+Programming Language: Java
+Libraries: Graph library (e.g., NetworkX for Python), GUI frameworks (optional)
+Guithub 
+
+
+
+
