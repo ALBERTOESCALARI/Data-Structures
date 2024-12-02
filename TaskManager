@@ -1,0 +1,40 @@
+import java.util.*;
+
+import java.util.HashMap;
+
+public class TaskManager {
+    private HashMap<String, Task > taskMap;  // Key: Task ID, Value: Task details
+
+    public TaskManager() {
+        this.taskMap = new HashMap<String, Task>();
+    }
+
+    // Add a new task
+    public void addTask(Task task) {
+        taskMap.put(task.getTaskId(), task);
+    }
+
+    // Update an existing task
+    public void updateTask(String taskId, Task updatedTask) {
+        if (taskMap.containsKey(taskId)) {
+            taskMap.put(taskId, updatedTask);
+        } else {
+            System.out.println("Task could not be found");
+        }
+    }
+
+    // Remove a task
+    public void removeTask(String taskId) {
+        taskMap.remove(taskId);
+    }
+
+    // Retrieve a task by its ID
+    public Task getTask(String taskId) {
+        return taskMap.get(taskId);
+    }
+
+    // Check if a task exists
+    public boolean taskExists(String taskId) {
+        return taskMap.containsKey(taskId);
+    }
+}
