@@ -1,0 +1,11 @@
+
+//Enum Class Priority used to represent the priority of a task
+
+public enum Priority {
+	
+	LOW,
+	MEDIUM,
+	HIGH
+	
+
+}
