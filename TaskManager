@@ -3,18 +3,21 @@ import java.util.*;
 import java.util.HashMap;
 
 public class TaskManager {
+
+    //HashMap field, uses String taskId as the key and Task object as value
     private HashMap<String, Task > taskMap;  // Key: Task ID, Value: Task details
 
+    //TaskManager constructor, initializes taskMap HashMap
     public TaskManager() {
         this.taskMap = new HashMap<String, Task>();
     }
 
-    // Add a new task
+    // Method used to add a task to HashMap
     public void addTask(Task task) {
         taskMap.put(task.getTaskId(), task);
     }
 
-    // Update an existing task
+    // Method used to update an existing task in the Hashmap
     public void updateTask(String taskId, Task updatedTask) {
         if (taskMap.containsKey(taskId)) {
             taskMap.put(taskId, updatedTask);
@@ -23,17 +26,17 @@ public class TaskManager {
         }
     }
 
-    // Remove a task
+    // Method used to delete an existing task in the Hashmap
     public void removeTask(String taskId) {
         taskMap.remove(taskId);
     }
 
-    // Retrieve a task by its ID
+    // Method used to retrieve an existing task in the Hashmap
     public Task getTask(String taskId) {
         return taskMap.get(taskId);
     }
 
-    // Check if a task exists
+    // Method used to check if a task currently exists in the Hashmap or not
     public boolean taskExists(String taskId) {
         return taskMap.containsKey(taskId);
     }
