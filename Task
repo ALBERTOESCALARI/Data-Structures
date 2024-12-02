@@ -1,0 +1,90 @@
+import java.util.List;
+
+public class Task {
+
+	private String taskId;
+	private String name;
+	private String description;
+	private Priority priority;
+	private List<String> dependancies;
+	
+	
+	
+	public Task(String taskId, String name, String description, Priority priority, List<String> dependancies) {
+		
+		this.taskId = taskId;
+		this.name = name;
+		this.description = description;
+		this.priority = priority;
+		this.dependancies = dependancies;
+		
+	}
+
+
+
+	public String getTaskId() {
+		return taskId;
+	}
+
+
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public String getDescription() {
+		return description;
+	}
+
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+
+	public Priority getPriority() {
+		return priority;
+	}
+
+
+
+	public void setPriority(Priority priority) {
+		this.priority = priority;
+	}
+
+
+
+	public List<String> getDependancies() {
+		return dependancies;
+	}
+
+
+
+	public void setDependancies(List<String> dependancies) {
+		this.dependancies = dependancies;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}
